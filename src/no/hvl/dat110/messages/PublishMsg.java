@@ -12,8 +12,36 @@ public class PublishMsg extends Message {
 	// Constructor, get/set-methods, and toString method
 	// as described in the project text
 	
-	public String getMessage() {
-		
-		throw new UnsupportedOperationException(TODO.method());
+	private String message;
+	private String topic;
+	
+	public PublishMsg(String user, String topic, String message) {
+		super(MessageType.PUBLISH,user);
+		this.topic=topic;
+		this.message=message;
 	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getTopic() {
+		return topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+	}
+
+	@Override
+	public String toString() {
+		return "PublishMsg [message=" + message + ", topic=" + topic + ", toString()=" + super.toString() + "]";
+	}
+	
+	
+	
 }
